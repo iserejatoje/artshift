@@ -1,0 +1,68 @@
+@import "../config"
+@import "../mixins"
+
+section.we-are-trusted
+  @include respond($mobile)
+    margin-top: 100px
+
+  @include respond(0, $mobile)
+    margin-top: 30px
+
+  svg
+    fill: $brand-icon
+
+  .grid-wrapper
+    text-align: center
+    @include respond(0, $mobile)
+      background: none !important
+
+    @include respond(0, 1207px)
+      padding-bottom: 50px
+
+    .thanksgiving-letters
+      display: inline-block
+      line-height: 1.5em
+      @include respond(0, $mobile)
+        padding-top: 20px
+
+    @include respond($mobile)
+      margin-top: 80px
+
+    @include respond(0, $mobile)
+      margin-top: 30px
+
+    @include respond($mobile)
+      display: flex
+      justify-content: center
+      min-height: 482px
+      flex-direction: column
+      align-items: center
+      position: relative
+
+  .grid
+    max-width: 1428px
+    margin: 0 auto
+    width: 100%
+    display: flex
+    flex-wrap: wrap
+    justify-content: center
+
+  .card
+    width: calc(100% / 6)
+
+    @include respond($mobile)
+      padding: 0 15px 70px 15px
+
+    @include respond(0, $mobile)
+      padding: 22px 15px
+
+    @include respond(460px)
+      min-width: 238px
+
+    @include respond(0, 460px)
+      width: 100%
+
+    display: flex
+    align-items: center
+    justify-content: center
+    text-align: center

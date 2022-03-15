@@ -1,0 +1,35 @@
+@use "sass:math"
+@import "config"
+
+@mixin respond($min: -1, $max: -1, $media: "all")
+  $query: "only " + $media
+
+  @if $min != -1 and $max != -1
+    $query: "only " + $media + " and (min-width: " + $min + ") and (max-width: " + #{$max - 1px} + ")"
+  @else if $min == -1 and $max != -1
+    $query: "only " + $media + " and (max-width: " + #{$max - 1px} + ")"
+  @else if $min != -1 and $max == -1
+    $query: "only " + $media + " and (min-width: " + #{$min} + ")"
+
+  @media #{$query}
+    @content
+
+@mixin transition($property, $ms)
+  transition: #{$property} #{$ms} linear
+
+@mixin link-effect-out($color, $effect: true)
+  transition: background-size 240ms ease-in-out, color 240ms ease-in-out
+
+  @if $effect == false
+    border-bottom: 1px solid $white
+
+  @if $effect == true
+    background-image: linear-gradient($color, $color)
+    background-size: 100% 1px
+    background-position: 0 calc(100% - 2px)
+    background-repeat: no-repeat
+
+  @include respond($mobile)
+    @if $effect == true
+      &:hover
+        background-size: 0 1px

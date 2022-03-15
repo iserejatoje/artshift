@@ -1,0 +1,161 @@
+@import "../config"
+@import "../mixins"
+
+img
+  image-rendering: -webkit-optimize-contrast
+
+.text-uppercase
+  text-transform: uppercase
+
+.text-decoration-none
+  text-decoration: none
+
+.base-button
+  background: transparent
+  padding: 0
+
+button
+  border: none
+  cursor: pointer
+
+.label
+  @include respond($mobile)
+    font-size: 24px
+
+  @include respond(0, $mobile)
+    font-size: 19px
+
+  @extend .text-uppercase
+  line-height: 1.34em
+
+  &--light
+    font-weight: 300
+
+  &--medium
+    font-weight: 500
+
+  &--white
+    color: $white
+
+  &--brown
+    color: $brown
+
+.inline-regular
+  line-height: 1.5em
+  @extend .text-decoration-none
+
+  &--white
+    color: $white
+
+  &--brown
+    color: $brown
+
+.inline
+  font-family: $second-font
+  font-size: 16px
+  font-weight: 300
+
+.base-inline
+  line-height: 1.5em
+  @extend .inline
+
+.base-title
+  line-height: 1.25em
+  font-weight: 300
+  color: $white
+  @extend .text-uppercase
+
+.heading-description
+  padding-left: 19px
+
+  @extend .base-title
+
+  @include respond($mobile)
+    padding-top: 44px
+
+  @include respond(0, $mobile)
+    padding-top: 30px
+
+.inline-link
+  font-weight: 300
+  text-decoration: none
+
+  &--navigation
+    color: $white
+    @include link-effect-out($white, false)
+
+  &--white
+    color: $white
+    @include link-effect-out($white, false)
+
+  &--brown
+    color: $brown
+    @include link-effect-out($brown)
+
+.heading
+  font-weight: 300
+  font-size: 28px
+  line-height: 1.15em
+  @extend .text-uppercase
+  color: $white
+
+  span
+    font-weight: 400
+    color: $brown
+
+.heading-medium
+  @include respond($mobile)
+    font-size: 40px
+  @include respond(0, $mobile)
+    font-size: 27px
+
+  font-weight: 300
+  line-height: 1.2em
+  @extend .text-uppercase
+
+  &--brown
+    color: $brown
+
+.heading-component-styled
+  line-height: 1.25em
+  color: $white
+  position: relative
+  margin: 0
+
+  &:before
+    background: $brown
+    content: ''
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    width: 2px
+    display: block
+
+.base-heading
+  @extend .text-uppercase
+
+  @include respond($mobile)
+    font-size: 56px
+
+  @include respond(0, $mobile)
+    font-size: 38px
+
+h1
+  padding: 5px 0 5px 16px
+  font-weight: 300
+  @extend .base-heading
+  @extend .heading-component-styled
+
+h2
+  padding: 16px 0 16px 18px
+  font-weight: 400
+
+  @extend .text-uppercase
+  @extend .heading-component-styled
+
+  @include respond($mobile)
+    font-size: 32px
+
+  @include respond(0, $mobile)
+    font-size: 24px

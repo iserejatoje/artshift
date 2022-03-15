@@ -1,0 +1,102 @@
+@import "../config"
+@import "../mixins"
+
+.about-info
+  @include respond($mobile)
+    margin: 90px 0
+
+  @include respond(0, $mobile)
+    margin: 40px 0
+
+  .text
+    color: $white
+    @include respond($mobile)
+      line-height: 2em
+
+    @include respond(0, $mobile)
+      line-height: 1.4em
+
+    @include respond($mobile)
+      padding-right: 30px
+      margin: 80px 0
+
+    @include respond(0, $mobile)
+      margin: 30px 0
+
+    p:not(:last-child)
+      margin-bottom: 32px
+
+  .grid
+    display: grid
+    position: relative
+
+    @include respond($mobile)
+      padding-bottom: 48px
+
+    @include respond(0, $laptop)
+      .column:last-child
+        display: none
+
+    @include respond($mobile)
+      padding-top: 80px
+
+      .column:last-child
+        position: relative
+
+        &:after
+          width: 1px
+          content: ''
+          position: absolute
+          height: 192px
+          left: -32px
+          background: $contacts-border
+          bottom: -47px
+
+      &:after
+        right: 0
+        max-width: 947px
+        width: 100%
+        position: absolute
+        content: ''
+        height: 1px
+        bottom: 0
+        background: $contacts-border
+
+    @include respond(0, $mobile)
+      padding-top: 40px
+
+    @include respond(0, $laptop)
+      grid-gap: 45px
+
+    @include respond($laptop)
+      grid-gap: 70px
+      grid-template-columns: 0.85fr 2fr 2fr
+
+    @include respond($mobile, $laptop)
+      grid-template-columns: 0.3fr 1fr
+
+    .title
+      padding-top: 8px
+      line-height: 1.15em
+      color: $white
+      @extend .text-uppercase
+
+    .column-row:not(:last-child)
+      @include respond($mobile)
+        margin-bottom: 92px
+      @include respond(0, $mobile)
+        margin-bottom: 30px
+
+  .base-heading
+    color: $brown
+
+  .about-image
+
+    @include respond(0, $laptop)
+      display: none
+
+    @include respond($laptop)
+      border: 8px solid $slide-border
+      filter: drop-shadow(0px 33px 44px rgba(0, 0, 0, 0.2))
+      max-width: 100%
+      display: block

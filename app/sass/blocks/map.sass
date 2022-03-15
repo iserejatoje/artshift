@@ -1,0 +1,98 @@
+@import "../config"
+@import "../mixins"
+
+section.map
+  position: relative
+
+  @include respond($mobile)
+    margin-top: 120px
+
+  @include respond(0, $mobile)
+    margin-top: 30px
+
+  #map
+    width: 100%
+
+    @include respond($mobile)
+      height: 482px
+
+    @include respond(0, $mobile)
+      height: 260px
+
+
+  @include respond($mobile)
+    display: flex
+    align-items: center
+
+  .right
+    width: 100%
+
+    @include respond(0, $mobile)
+      margin-bottom: 45px
+
+    @include respond($laptop)
+      max-width: 520px
+
+    @include respond($mobile, $laptop)
+      max-width: 420px
+
+    .heading
+      @include respond($mobile)
+        padding-left: 14px
+
+  .left
+    @include respond(0, $mobile)
+      margin-bottom: 50px
+
+    .heading
+      @include respond($mobile)
+        margin-bottom: 40px
+
+      @include respond(0, $mobile)
+        margin-bottom: 20px
+
+  .container
+    color: $white
+
+    @include respond($mobile)
+      position: absolute
+      left: 0
+      right: 0
+      z-index: 1
+      display: flex
+      justify-content: space-between
+
+  .ymaps-map
+    background: $app-background
+
+  .ymaps-point-overlay
+    position: relative
+    pointer-events: none
+
+  &.map-labeled
+    .ymaps-point-overlay
+      &:after
+        position: absolute
+        white-space: nowrap
+        content: 'ул. Свободы, 35 строение 19, 4 этаж, офис 48'
+        font-weight: 300
+        font-size: 24px
+        line-height: 40px
+        @extend .text-uppercase
+        color: $white
+        top: -39px
+        left: 52px
+        pointer-events: none
+
+  .ymaps-copyrights-pane
+    display: none
+
+  .ymaps-layers-pane
+    filter: brightness(0.16)
+
+  svg
+    display: block
+
+  .ymaps-point-overlay
+    svg
+      transform: translate3d(-15px, -45px, 0)

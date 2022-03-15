@@ -1,0 +1,65 @@
+@import "../mixins"
+@import "../config"
+
+.form-map
+
+  @include respond($mobile)
+    margin-bottom: 39px
+    margin-top: 47px
+
+  @include respond(0, $mobile)
+    margin-top: 30px
+    margin-bottom: 30px
+
+  .form-icon
+    width: 45px
+    display: flex
+    justify-content: center
+    margin-right: 2px
+
+  .column
+    display: flex
+    align-items: center
+
+    @include respond($mobile-xs)
+
+      &:last-child
+        max-width: 188px
+        flex: 1
+        justify-content: center
+
+      &:first-child
+        border-right: 1px solid $form-border
+        flex: 1
+
+  .form-row
+    border-top: 1px solid $form-border
+    display: flex
+
+    &--columns
+      @include respond(0, $mobile-xs)
+        flex-direction: column
+
+      @include respond(0, $mobile)
+        .column:last-child
+          padding-top: 10px
+          padding-left: 47px
+
+    &--center
+      align-items: center
+
+    input
+      background: transparent
+      height: 48px
+      border: none
+      outline: none
+      color: $white
+      font-weight: 300
+      width: 100%
+      padding: 0
+      flex: 1
+
+      &::placeholder
+        @extend .text-uppercase
+        color: $form-placeholder
+        font-weight: 300

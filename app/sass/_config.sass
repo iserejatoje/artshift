@@ -1,0 +1,47 @@
+// Colors
+$app-background: #232323
+$brown: #cb8964
+$white: #fff
+$slide-border: #181818
+$dark: #1e1e1e
+$black: #000
+$logo-span: #2b2a29
+$form-border: transparentize($white, .68)
+$contacts-border: transparentize($white, .68)
+$form-placeholder: transparentize($white, .7)
+$brand-icon: #898989
+
+// Variables
+
+$container-padding: 15px
+$slider-content-delay: 800ms
+
+// Breakpoints
+
+$laptop: 1366px
+$mobile: 1024px
+$mobile-xs: 640px
+
+// Fonts
+
+$default-font: 'Oswald', sans-serif
+$second-font: 'Roboto', sans-serif
+
+@mixin font($font-name, $font-style, $font-weight, $font-url)
+  @font-face
+    font-family: $font-name
+    font-style: $font-style
+    font-weight: $font-weight
+    font-display: swap
+    src: url($font-url) format('woff')
+
+@include font('Roboto', normal, 300, '../fonts/Roboto-Light.woff2')
+@include font('Roboto', normal, 400, '../fonts/Roboto-Regular.woff2')
+@include font('Roboto', normal, 700, '../fonts/Roboto-Bold.woff2')
+
+@include font('Oswald', normal, 200, '../fonts/Oswald-ExtraLight.woff2')
+@include font('Oswald', normal, 300, '../fonts/Oswald-Light.woff2')
+@include font('Oswald', normal, 400, '../fonts/Oswald-Regular.woff2')
+@include font('Oswald', normal, 500, '../fonts/Oswald-Medium.woff2')
+@include font('Oswald', normal, 600, '../fonts/Oswald-SemiBold.woff2')
+@include font('Oswald', normal, 700, '../fonts/Oswald-Bold.woff2')

@@ -1,0 +1,150 @@
+@import "../config"
+@import "../mixins"
+
+.premier
+  @include respond($mobile)
+    margin-top: 135px
+    margin-bottom: 120px
+
+  @include respond(0, $mobile)
+    padding-top: 40px
+    margin-bottom: 50px
+
+.service-premier
+  @include respond($mobile)
+    margin-bottom: 120px
+
+  @include respond(0, $mobile)
+    padding: 15px 0
+
+.premier,
+.service-premier
+  @include respond(0, $mobile)
+    background: $black
+
+  .premier-wrapper
+    display: flex
+
+    .content
+
+      @include respond($mobile)
+        min-width: 360px
+        flex: 1
+
+      display: flex
+      flex-direction: column
+      align-items: flex-start
+      @include respond(0, $mobile)
+        width: 100%
+
+      .link-block
+        padding-top: 20px
+        @include respond($mobile)
+          margin-bottom: 45px
+        @include respond(0, $mobile)
+          margin-bottom: 30px
+        display: flex
+        align-items: center
+
+      a
+        line-height: 1.5em
+        margin-right: 14px
+
+  .swiper-slide
+    .image
+      overflow: hidden
+      border: 8px solid $slide-border
+
+      &:hover
+        img
+          transform: scale(1.05)
+
+      @include respond(0, $mobile)
+        display: none
+
+    img
+      max-width: 100%
+      display: block
+      height: 100%
+      object-fit: cover
+      transition: transform 640ms ease-in-out
+
+    .slider-tags
+      font-weight: 300
+      color: transparentize($white, .5)
+      line-height: 1.25em
+      @extend .text-uppercase
+
+    .slider-title
+      font-weight: 300
+      color: $white
+
+      @include respond(1441px)
+        margin-top: 85px
+
+      @include respond(0, 1441px)
+        margin-top: 55px
+
+      @include respond($mobile)
+        flex: 1
+
+      @include respond(0, $mobile)
+        margin-top: 5px
+
+  .container-navigation
+    display: flex
+    @include respond(0, $mobile)
+      margin-top: 20px
+
+    @include respond($mobile)
+      justify-content: flex-end
+
+    button
+      display: flex
+      align-items: center
+
+      span
+        transition: border-bottom-color 240ms ease-in-out, color 240ms ease-in-out
+        @include respond(0, $mobile)
+          display: none
+
+      svg
+        fill: $white
+        transition: fill 240ms ease-in-out, transform 240ms ease-in-out
+
+      &.prev:hover
+        svg
+          transform: translateX(-3px)
+
+      &.next:hover
+        svg
+          transform: translateX(3px)
+
+      &:hover
+        svg
+          fill: $brown
+
+        span
+          color: $brown
+          border-color: $brown
+
+      &.prev
+        svg
+          margin-right: 16px
+
+      &.next
+        svg
+          margin-left: 16px
+
+  .swiper-navigation
+    @include respond(0, $mobile)
+      padding-bottom: 15px
+    @include respond($mobile)
+      margin-top: 45px
+      max-width: 270px
+      border-top: 1px solid $form-border
+      padding-top: 15px
+
+    width: 100%
+    display: flex
+    justify-content: space-between

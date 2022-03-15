@@ -1,0 +1,98 @@
+@import "../mixins"
+@import "../config"
+
+section.advantages
+  @include respond($mobile)
+    margin: 110px 0
+  @include respond(0, $mobile)
+    margin: 40px 0
+
+  .grid
+    @extend .container, .container-medium
+
+    display: grid
+    @include respond($mobile)
+      padding-top: 120px
+    @include respond(0, $mobile)
+      padding-top: 50px
+    @include respond($mobile, $laptop)
+      grid-row-gap: 45px
+    @include respond($laptop)
+      grid-template-columns: 0.75fr 0.9fr 1fr
+
+    @include respond($mobile, $laptop)
+      grid-template-columns: 1fr 1fr
+
+    &-3-items
+      .card
+        @include respond($laptop)
+          &:not(:nth-last-child(1)):not(:nth-last-child(2)):not(:nth-last-child(3))
+            border-bottom: 1px solid $form-border
+
+    &-2-items
+      .card
+        @include respond($laptop)
+          &:not(:nth-last-child(1)):not(:nth-last-child(2))
+            border-bottom: 1px solid $form-border
+
+    &-1-items
+      .card
+        @include respond($laptop)
+          &:nth-last-child(1)
+            border-right: 1px solid $form-border
+
+          &:not(:nth-last-child(1))
+            border-bottom: 1px solid $form-border
+
+
+  .card
+    @include respond($laptop)
+      &:nth-child(6n + 3)
+        border-left: 1px solid $form-border
+
+      &:nth-child(6n + 5)
+        border-left: 1px solid $form-border
+
+      &:nth-child(3n + 2)
+        padding-left: 75px
+
+      &:nth-child(3n + 3)
+        padding-left: 75px
+
+      &:not(:nth-child(1)):not(:nth-child(2)):not(:nth-child(3))
+        padding-top: 80px
+
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3)
+        padding-top: 30px
+
+    @include respond($laptop)
+      min-height: 432px
+
+    @include respond($mobile, $laptop)
+      padding-right: 25px
+
+    @include respond(0, $mobile)
+      &:not(:last-child)
+        padding-bottom: 25px
+        margin-bottom: 25px
+        border-bottom: 1px solid $form-border
+
+
+  .icon
+    height: 64px
+    display: flex
+    align-items: flex-end
+
+  .label
+    @include respond($mobile)
+      margin-top: 40px
+      margin-bottom: 40px
+    @include respond(0, $mobile)
+      margin-top: 25px
+      margin-bottom: 25px
+
+  .text
+    max-width: 302px
+    @extend .legend-content

@@ -1,0 +1,45 @@
+@import "../config"
+@import "../mixins"
+
+section.exclusive-projects
+  @include respond($mobile)
+    margin: 120px 0
+
+  @include respond(0, $mobile)
+    margin: 40px 0
+
+  .heading-description
+    max-width: 360px
+
+  .swiper-container
+    @include respond($mobile)
+      margin-top: 80px
+    @include respond(0, $mobile)
+      margin-top: 40px
+
+  .title
+    padding-left: 19px
+    @include respond($mobile)
+      margin-top: 40px
+    @include respond(0, $mobile)
+      margin-top: 25px
+
+  .swiper-slide
+    .image
+      @extend .image-border
+      overflow: hidden
+      &:hover
+        img
+          transform: scale(1.05)
+
+      img
+        display: block
+        max-width: 100%
+        width: 100%
+        object-fit: cover
+        transition: transform 440ms ease-in-out
+
+  h2
+    max-width: 605px
+    span
+      font-weight: 300

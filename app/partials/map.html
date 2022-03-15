@@ -1,0 +1,37 @@
+<section class="map">
+    <div class="container container-medium pointer-events-none">
+        <div class="left animated fade-in">
+            <div class="heading pointer-events-all">Компания <span>Artshift</span></div>
+            <a href="" class="inline-link inline-link--brown text-uppercase pointer-events-all">Карточка компании</a>
+        </div>
+        <div class="right animated fade-in">
+            <div class="heading pointer-events-all">Остались вопросы?</div>
+            <form action="" class="form form-map" enctype="application/x-www-form-urlencoded" method="post">
+                <input type="hidden" name="action" value="feedback">
+
+                <div class="form-row form-row--center">
+                    <div class="form-icon">
+                        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#CB8964" d="m10.49 6.46-.95-.95-6.2 6.21v.95h.94l6.2-6.21Zm.94-.95.94-.94-.94-.94-.94.94.94.94ZM4.83 14H2v-2.83l8.96-8.96a.67.67 0 0 1 .94 0l1.89 1.9a.67.67 0 0 1 0 .93L4.83 14Z"/></svg>
+                    </div>
+                    <input type="text" name="message" class="pointer-events-all" placeholder="Текст сообщения">
+                </div>
+                <div class="form-row form-row--columns">
+                    <div class="column">
+                        <div class="form-icon">
+                            <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="#CB8964" d="M13.33 8a5.33 5.33 0 1 0-2.37 4.44l.74 1.1A6.67 6.67 0 1 1 14.67 8v1.01a2.33 2.33 0 0 1-4.27 1.31 3.33 3.33 0 1 1-.4-4.98h1.33V9a1 1 0 0 0 2 0V8ZM8 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z"/></svg>
+                        </div>
+                        <input type="text" name="contact" class="pointer-events-all" placeholder="Ваш e-mail или телефон">
+                    </div>
+                    <div class="column">
+                        <button class="base-button pointer-events-all">
+                            <span class="inline-link text-uppercase inline-link--brown">Задать вопрос</span>
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div class="base-inline pointer-events-all">Мы не передаем ваши  данные третьим лицам.</div>
+        </div>
+    </div>
+
+    <div id="map" data-lat="55.843101" data-lng="37.445868"></div>
+</section>

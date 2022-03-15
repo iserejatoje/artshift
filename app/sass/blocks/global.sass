@@ -1,0 +1,256 @@
+@import "../config"
+@import "../mixins"
+
+*,
+*:after,
+*:before
+  box-sizing: border-box
+
+html,
+body
+  height: 100%
+
+.app
+  display: flex
+  flex-direction: column
+  min-height: 100%
+  max-width: 1920px
+  margin: 0 auto
+  padding-top: 53px
+
+  .app-inner
+    flex: 1 0 auto
+
+.pointer-events-all
+  pointer-events: all
+
+
+.pointer-events-none
+  pointer-events: none
+
+body
+  background-color: $app-background
+
+  &.desktop
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1920' height='1081' viewBox='0 0 1920 1081'%3E%3Cg opacity='0.5'%3E%3Cpath opacity='0.2' d='M1.17188 1.58826L1917.68 1078.41' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3Cpath opacity='0.2' d='M1.17188 1078.41L1917.68 1.58813' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3C/g%3E%3Cg opacity='0.5'%3E%3Cpath opacity='0.2' d='M960.008 1.58826L1918.26 1078.41' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3Cpath opacity='0.2' d='M960.008 1078.41L1918.26 1.58813' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3C/g%3E%3Cg opacity='0.5'%3E%3Cpath opacity='0.2' d='M0.585938 1.58826L958.838 1078.41' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3Cpath opacity='0.2' d='M0.585938 1078.41L958.838 1.58813' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3C/g%3E%3Cg opacity='0.5'%3E%3Cpath opacity='0.2' d='M0.292969 0.589661L479.708 1078.41' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3Cpath opacity='0.2' d='M0.292969 1078.41L479.708 0.589661' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3C/g%3E%3Cg opacity='0.5'%3E%3Cpath opacity='0.2' d='M479.293 0.589661L958.419 1078.41' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3Cpath opacity='0.2' d='M479.293 1078.41L958.419 0.589661' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3C/g%3E%3Cg opacity='0.5'%3E%3Cpath opacity='0.2' d='M960.293 0.589661L1438.42 1078.41' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3Cpath opacity='0.2' d='M960.293 1078.41L1438.42 0.589661' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3C/g%3E%3Cg opacity='0.5'%3E%3Cpath opacity='0.2' d='M1439.29 0.589661L1918.42 1078.41' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3Cpath opacity='0.2' d='M1439.29 1078.41L1918.42 0.589661' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3C/g%3E%3Cpath opacity='0.1' d='M959.422 0V1080' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3Cpath opacity='0.1' d='M479.371 0V1080' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3Cpath opacity='0.1' d='M716.34 0V1080' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3Cpath opacity='0.1' d='M1199.34 0V1080' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3Cpath opacity='0.1' d='M238.34 0V1080' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3Cpath opacity='0.1' d='M1678.34 0V1080' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3Cpath opacity='0.1' d='M1438.79 0V1080' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3Cpath opacity='0.1' d='M0 216H1918.84' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3Cpath opacity='0.1' d='M0 864.176H1918.84' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3Cpath opacity='0.1' d='M0 719.176H1918.84' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3Cpath opacity='0.1' d='M0 359.177H1918.84' stroke='white' stroke-opacity='0.2' stroke-linecap='square'/%3E%3C/svg%3E") repeat
+  font-family: $default-font
+  font-size: 16px
+
+.container
+  padding-left: $container-padding
+  padding-right: $container-padding
+  width: 100%
+  margin: 0 auto
+
+  &-large
+    max-width: (1728px + ($container-padding * 2))
+
+  &-medium
+    max-width: (1470px + ($container-padding * 2))
+
+.base-logo
+  display: inline-flex
+  align-items: center
+  text-decoration: none
+
+  svg
+    display: block
+
+  .logo-span
+    background: $logo-span
+    width: 40px
+    height: 53px
+    display: flex
+    align-items: center
+    justify-content: center
+
+  .logo-text
+    font-weight: 200
+    font-size: 32px
+    color: $white
+    padding-left: 16px
+    @extend .text-uppercase
+
+.nav
+  max-width: 963px
+  padding: 0
+  margin: 0 25px
+  width: 100%
+  align-items: center
+  justify-content: space-between
+
+  a
+    color: $white
+    font-weight: 300
+    @extend .text-decoration-none
+    @include transition(color, 240ms)
+
+    &:hover
+      color: $brown
+
+  ul,
+  li
+    list-style: none
+
+  ul
+    margin: 0
+    padding: 0
+
+  @include respond($laptop)
+    display: flex
+
+  @include respond(0, $laptop)
+    display: none
+
+  .nav-ul
+    padding-top: 16px
+    position: absolute
+    transform: translateY(6px)
+    opacity: 0
+    visibility: hidden
+    transition: opacity 200ms linear, visibility 200ms linear, transform 200ms linear
+
+    a
+      font-size: 12px
+      font-family: $second-font
+      text-transform: lowercase
+      display: block
+
+    li:not(:last-child)
+      margin-bottom: 12px
+
+  .nav-li
+    > a
+      @extend .text-uppercase
+
+
+  .nav-submenu
+    &:hover
+      .nav-ul
+        opacity: 1
+        transform: translateY(0)
+        visibility: visible
+
+
+button.burger
+  width: 34px
+  height: 13px
+
+  @include respond($laptop)
+    display: none
+
+  @include respond(0, $laptop)
+    display: block
+
+  .burger-line
+    height: 1px
+    width: 100%
+    background: $white
+    display: block
+
+    &:not(:last-child)
+      margin-bottom: 5px
+
+.swiper-navigation
+  button
+    background: transparent
+    padding: 0
+    border: none
+
+header
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  z-index: 10
+  transition: background 200ms ease-in-out
+
+  &.header-styled
+    background: $app-background
+
+    .nav-ul
+      background: $app-background
+      margin: 0 -15px
+      padding-left: 15px
+      padding-right: 15px
+      padding-bottom: 15px
+
+  .header-inner
+    display: flex
+    justify-content: space-between
+
+  .phone-link
+    @include transition(color, 240ms)
+
+    &:hover
+      color: $brown
+
+  .right
+    display: flex
+    align-items: center
+
+    @include respond($laptop)
+      max-width: 320px
+      width: 100%
+      justify-content: space-between
+
+  svg
+    display: block
+
+  .header-element
+    @include respond($mobile)
+      display: flex
+      align-items: center
+
+    @include respond(0, $mobile)
+      display: none
+
+    @include respond($mobile, $laptop)
+      margin-right: 35px
+
+    svg
+      margin-right: 12px
+
+.image-border
+  border: 8px solid $slide-border
+
+footer
+  @include respond($mobile)
+    padding: 80px 0
+
+  @include respond(0, $mobile)
+    padding: 40px 0
+    background: $black
+
+  color: $white
+  text-align: center
+  font-size: 16px
+  line-height: 1.5em
+  font-weight: 300
+  flex: 0 0 auto
+
+.swiper-container
+  transition: opacity 700ms linear, visibility 700ms linear
+
+.swiper-container:not(.swiper-container-initialized)
+  opacity: 0
+  visibility: hidden
+
+body.desktop
+  .fade-up
+    opacity: 0
+    transform: translateY(30px)
+    transition: opacity 800ms ease-out, transform 800ms ease-out
+
+    &.completed
+      transition-delay: 100ms
+      opacity: 1
+      transform: translateY(0)
+
+  .fade-in
+    opacity: 0
+    transition: opacity 800ms ease-out
+
+    &.completed
+      transition-delay: 100ms
+      opacity: 1
